@@ -1,3 +1,4 @@
+#Convertation to APK
 #Tested: 2025/01/26
 # by Kasper Arfman
 name: Build APK
@@ -13,7 +14,7 @@ jobs:
       - name: Buildozer dependencies
         run: |
           sudo apt update
-          sudo apt install openjdk-22-jdk
+          sudo apt install temurin-17-jdk-amd64
           sudo apt install python3-pip
           pip3 install --user --upgrade buildozer
           sudo apt update
