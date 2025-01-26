@@ -1,12 +1,4 @@
-[app]
 
-# (str) Title of your application
-title = AutoresponderApp
-
-# (str) Package name
-package.name = Autoresponderapp
-
-# (str) Package domain (needed for android/ios packaging)
 package.domain = org.autoresponder
 
 # (str) Source code where the main.py live
@@ -48,7 +40,7 @@ requirements = python3.11.7,kivy==2.0.0,gtts,playsound,pillow
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = robot.jpg
+#icon.filename = %(source.dir)s/robot.jpg
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
