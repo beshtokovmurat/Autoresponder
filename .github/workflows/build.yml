@@ -14,7 +14,12 @@ jobs:
       - name: Buildozer dependencies
         run: |
           sudo apt update
+          apt search openjdk
+          sudo add-apt-repository ppa:openjdk-r/ppa
+          sudo apt update
           sudo apt install openjdk-18-jdk
+          java -version
+          sudo update-alternatives --config java
           sudo apt install python3-pip
           pip3 install --user --upgrade buildozer
           sudo apt update
