@@ -12,7 +12,9 @@ jobs:
 
       - name: Buildozer dependencies
         run: |
+          buildozer android clean
           sudo apt update
+
           sudo apt install python3-pip
           pip3 install --user --upgrade buildozer
           sudo apt update
@@ -25,8 +27,8 @@ jobs:
         run: |
           export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64
           sudo update-java-alternatives --set ${JAVA_HOME}
-          export PATH=$JAVA_HOME/bin:$PATH
-          yes | buildozer -v android debug
+          export PATH=$PATH:$JAVA_HOME/bin
+          yes | buildozer android debug deploy run
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
