@@ -12,9 +12,7 @@ jobs:
 
       - name: Buildozer dependencies
         run: |
-          buildozer android clean
           sudo apt update
-
           sudo apt install python3-pip
           pip3 install --user --upgrade buildozer
           sudo apt update
