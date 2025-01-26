@@ -24,10 +24,10 @@ jobs:
 
       - name: Handle Java path
         run: |
-          export JAVA_HOME=/usr/lib/jvm/java-22-openjdk
-          sudo update-java-alternatives -s java-22-openjdk-amd64
+          export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64
+          sudo update-java-alternatives --set ${JAVA_HOME}
           export PATH=$JAVA_HOME/bin:$PATH
-          yes | buildozer android debug deploy run
+          yes | buildozer -v android debug
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
