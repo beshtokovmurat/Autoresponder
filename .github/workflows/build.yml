@@ -16,8 +16,7 @@ jobs:
           sudo apt update
           apt search openjdk
           sudo add-apt-repository ppa:openjdk-r/ppa
-          sudo apt update
-          sudo apt install openjdk-21-jdk
+          sudo apt install openjdk-17-jdk
           java -version
           sudo update-alternatives --config java
           sudo apt install python3-pip
@@ -30,7 +29,7 @@ jobs:
 
       - name: Handle Java path
         run: |
-          export JAVA_HOME=/usr/lib/jvm/openjdk-21-jdk
+          export JAVA_HOME=/usr/lib/jvm/openjdk-17-jdk
           export PATH=$JAVA_HOME/bin:$PATH
           yes | buildozer android debug deploy run
 
