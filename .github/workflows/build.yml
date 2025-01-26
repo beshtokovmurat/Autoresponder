@@ -30,7 +30,7 @@ jobs:
 
       - name: Handle Java path
         run: |
-          export JAVA_HOME=/usr/lib/jvm/openjdk-21-jdk-amd64
+          export JAVA_HOME=/usr/lib/jvm/openjdk-21-jdk
           sudo update-java-alternatives --set ${JAVA_HOME}
           export PATH=$JAVA_HOME/bin:$PATH
           yes | buildozer -v android debug
